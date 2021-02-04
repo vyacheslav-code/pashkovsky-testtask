@@ -8,11 +8,12 @@ type Props = {
 
 const StyledCircle = styled.div`
     border-radius: 50%;
+    border: 2px solid var(--color-primary);
     width: var(--padding-m);
     height: var(--padding-m);
-    background-color: ${({ fill }: Props) =>
+    background: ${({ fill }: Props) =>
         fill
-            ? 'radial-gradient(white 10%, var(--color-primary) 90%)'
+            ? 'radial-gradient(circle, var(--color-primary) 60%, white 40%)'
             : 'white'};
 `;
 

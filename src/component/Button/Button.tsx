@@ -9,7 +9,8 @@ const StyledButton = styled.button`
     color: var(--color-white);
     background: var(--color-primary);
     border: none;
-    &:active, &:focus{
+    &:active,
+    &:focus {
         outline: none;
     }
     &:disabled {
@@ -24,7 +25,9 @@ type Props = {
 };
 
 const Button: React.FC<Props> = ({ onClick, title, disabled }) => (
-    <StyledButton onClick={onClick} disabled={disabled} >{title}</StyledButton>
+    <StyledButton onClick={onClick} disabled={disabled}>
+        {title}
+    </StyledButton>
 );
 
 export default Button;

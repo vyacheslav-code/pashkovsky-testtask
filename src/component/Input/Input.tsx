@@ -12,7 +12,8 @@ const StyledInput = styled.input`
     &::placeholder {
         color: var(--color-light-grey);
     }
-    &:active, &:focus {
+    &:active,
+    &:focus {
         outline: none;
     }
 `;

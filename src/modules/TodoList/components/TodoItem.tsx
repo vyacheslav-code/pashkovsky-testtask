@@ -6,11 +6,15 @@ import DeleteIcon from '../../../component/DeleteIcon';
 type Props = {
     title?: string;
     completed: boolean;
+    toggle?: (id: string) => void;
+    id?: string;
+    removeTodo?: (id: string) => void;
 };
 
 const StyledToDoItem = styled.div`
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin-bottom: var(--padding-s);
 `;
 
@@ -21,11 +25,26 @@ const StyledToDoTitle = styled.p`
         completed ? 'line-through' : 'none'};
 `;
 
-const TodoItem: React.FC<Props> = ({ title, completed }) => (
+const TodoItem: React.FC<Props> = ({
+    title,
+    completed,
+    toggle,
+    id,
+    removeTodo,
+}) => (
     <StyledToDoItem>
-        <Circle onClick={() => {}} fill={completed} />
+        <Circle
+            onClick={() => {
+                toggle(id);
+            }}
+            fill={completed}
+        />
         <StyledToDoTitle completed={completed}>{title}</StyledToDoTitle>
-        <DeleteIcon onClick={() => {}} />
+        <DeleteIcon
+            onClick={() => {
+                removeTodo(id);
+            }}
+        />
     </StyledToDoItem>
 );
 

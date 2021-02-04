@@ -16,6 +16,7 @@ const DeleteIcon: React.FC<Props> = ({ onClick }) => (
             data-name="Layer 1"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
+            height="16"
         >
             <title>spam, trash, bin, garbage, delete</title>
             <path d="M2.88,5,5.11,24H18.89L21.12,5ZM17.11,22H6.89L5.12,7H18.88Z" />

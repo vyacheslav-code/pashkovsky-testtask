@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Input from '../../component/Input';
 import Button from '../../component/Button';
 import { useStore } from '../../store/helpers';
-import { useObserver } from 'mobx-react-lite';
+import { observer } from 'mobx-react-lite';
 
 const StyledAddContainer = styled.div`
     width: 100%;
@@ -18,9 +18,9 @@ const AddTodo = () => {
     const handleAddTodo = () => {
         addTodo(inputValue);
         setInputValue('');
-    }
+    };
 
-    return useObserver(() => (
+    return (
         <StyledAddContainer>
             <Input
                 onChange={(evt) => {
@@ -29,9 +29,13 @@ const AddTodo = () => {
                 value={inputValue}
                 placeholder="Add new todo..."
             />
-            <Button onClick={handleAddTodo} title="Add" disabled={!inputValue.length} />
+            <Button
+                onClick={handleAddTodo}
+                title="Add"
+                disabled={!inputValue.length}
+            />
         </StyledAddContainer>
-    ));
+    );
 };
 
-export default AddTodo;
+export default observer(AddTodo);
