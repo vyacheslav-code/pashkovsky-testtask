@@ -3,7 +3,6 @@ import Title from '../../component/Title';
 import TodoItem from './components/TodoItem';
 import { useStore } from '../../store/helpers';
 import { observer } from 'mobx-react-lite';
-import { remove } from 'mobx';
 
 const TodoList = () => {
     const {
@@ -11,7 +10,7 @@ const TodoList = () => {
         finishedTasks,
         fetchList,
         toggle,
-        removeTodo,
+        removeTodo
     } = useStore();
     useEffect(() => {
         fetchList();

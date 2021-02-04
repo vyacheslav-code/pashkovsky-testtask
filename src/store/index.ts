@@ -53,11 +53,12 @@ export class TodoList {
         const updatedTask = await response.json();
 
         this.list = this.list.map((item) => {
-            if (updatedTask.id === id) {
+            if (updatedTask.id === item.id) {
                 return updatedTask;
             }
             return item;
         });
+        console.log(this.list)
     };
 
     get finishedTasks(): TaskModel[] {
